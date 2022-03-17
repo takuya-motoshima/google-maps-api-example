@@ -30,10 +30,10 @@ const {Command} = require('commander');
       return void console.log('Postal code not found');
 
     // Find the postal code.
-    const postalCode = res.data.results[0].address_components.find(component => component.types.includes('postal_code'));
-    if (!postalCode)
+    const component = res.data.results[0].address_components.find(component => component.types.includes('postal_code'));
+    if (!component)
       return void console.log('Postal code not found');
-    console.log(`Postal code ${postalCode.long_name} found`);
+    console.log(`Postal code ${component.long_name} found`);
   } catch (err) {
     console.error(err.message);
   }

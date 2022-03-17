@@ -1,0 +1,38 @@
+{
+  "name": "google-maps-api-example",
+  "version": "1.0.0",
+  "description": "Example of using Google Maps API in Node.js, browser, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takuya-motoshima/google-maps-api-example.git"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "cli",
+    "docs",
+    "package.json",
+    "screencap.png"
+  ],
+  "keywords": [
+    "google",
+    "maps",
+    "browser",
+    "node"
+  ],
+  "author": "Takuya Motoshima <developer.takuyamotoshima@gmail.com> (https://twitter.com/TakuyaMotoshima)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takuya-motoshima/google-maps-api-example/issues",
+    "email": "developer.takuyamotoshima@gmail.com"
+  },
+  "homepage": "https://github.com/takuya-motoshima/google-maps-api-example#readme",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.11",
+    "commander": "^9.0.0"
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postal Code Lookup by Address</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <main class="container">
+      <h1 class="mb-4 fw-normal fs-2">
+        <svg width="36px" height="31px" viewBox="0 0 36 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>Find a Postal Code</title>
+            <defs>
+                <linearGradient x1="0%" y1="0%" x2="100%" y2="0%" id="linearGradient">
+                  <stop stop-color="#FFFFFF" offset="0%"></stop>
+                  <stop stop-color="#FFFFFF" offset="100%"></stop>
+                </linearGradient>
+            </defs>
+            <g id="Dev-handoff" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+              <g id="DayOps_FindAPostalCode-Desktop-DEFAULT-Copy-3" transform="translate(-374.000000, -147.000000)" stroke="hsl(0deg 0% 100%)">
+                <g id="Find-a-Postal-Code" transform="translate(375.000000, 148.000000)">
+                  <polyline id="Shape" points="23.7926087 21.0134783 0 21.0134783 0 0.0295652174 30.3856522 0.0295652174 30.3856522 12.0108696"></polyline>
+                  <line x1="3.96173913" y1="4.70086957" x2="13.5926087" y2="4.70086957" id="Shape" fill="url(#linearGradient)" fill-rule="nonzero" stroke-linecap="round"></line>
+                  <line x1="3.96173913" y1="8.44826087" x2="6.17913043" y2="8.44826087" id="Shape" fill="hsl(0deg 0% 100%)" fill-rule="nonzero" stroke-linecap="round"></line>
+                  <line x1="8.31521739" y1="8.44826087" x2="10.54" y2="8.44826087" id="Shape" fill="hsl(0deg 0% 100%)" fill-rule="nonzero" stroke-linecap="round"></line>
+                  <polygon id="Rectangle-path" fill="hsl(0deg 0% 40%)" fill-rule="nonzero" points="21.9891304 3.98391304 26.4386957 3.98391304 26.4386957 8.47782609 21.9891304 8.47782609"></polygon>
+                  <path d="M34,17.2291304 C34,22.173913 28.5082609,28.826087 28.5082609,28.826087 C26.6088387,26.522033 25.0482934,23.9584578 23.873913,21.2130435 C23.3497332,19.9581257 23.0591684,18.6180206 23.0165217,17.2586957 C23.0165217,14.2256919 25.4752571,11.7669565 28.5082609,11.7669565 C31.5412646,11.7669565 34,14.2256919 34,17.2586957 L34,17.2291304 Z" id="Shape"></path>
+                  <ellipse id="Oval" fill="hsl(0deg 0% 40%)" fill-rule="nonzero" cx="28.5082609" cy="17.8352174" rx="2.09913043" ry="2.09173913"></ellipse>
+                </g>
+              </g>
+            </g>
+        </svg>
+        <span class="ms-3">Postal Code Lookup by Address</span>
+      </h1>
+      <p>Look up a postical code in address, city, building, etc.</p>
+    </main>
+  </header>
+
+  <main class="container my-4">
+
+    <div class="row">
+
+      <div class="col-sm-6">
+        <form id="form">
+          <div class="mb-3">
+            <label for="address" class="form-label">Address, building, city, etc.</label>
+            <input type="text" class="form-control" id="address" required autofocus value="Tokyo Skytree">
+          </div>
+          <div class="mb-3">
+            <label for="key" class="form-label">Google Maps API key</label>
+            <input type="password" class="form-control" id="key" required>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="remember">
+            <label class="form-check-label" for="remember">Remember the API key</label>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <div class="spinner-border spinner-border-sm d-none me-1" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>Find the postal code
+          </button>
+        </form>
+
+        <div class="mt-3 fade">
+          <label class="form-label text-success">The postal code found is</label>
+          <input type="text" readonly class="form-control-plaintext fs-3 text-success" id="foundPostalCode">
+        </div>
+
+      </div>
+
+      <div class="col-sm-6">
+        <div id="wrapper" class="wrapper mt-3 mt-sm-0"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="https://unpkg.com/@googlemaps/js-api-loader/dist/index.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
